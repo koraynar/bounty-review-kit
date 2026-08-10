@@ -1,0 +1,20 @@
+# Never publish anything that attributes review activity to a named program,
+# or that contains findings. Coordinated disclosure: results stay private
+# until the program authorizes disclosure.
+#
+# NOTE: git does not support trailing comments on pattern lines — keep
+# comments on their own line or the pattern silently stops matching.
+
+# your live queue — names programs, contains local paths
+targets.md
+
+# real candidate findings, written by the continuous-review loop
+findings-log.md
+
+# personal session state; references specific targets reviewed
+HANDOFF.md
+
+# anything you keep per-target
+notes/
+clones/
+*.local.md
