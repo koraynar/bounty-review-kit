@@ -15,6 +15,7 @@ Fill this out **before** cloning or spending any compute. If more than one box i
 - [ ] No requirement I can't meet (rep gate, verified account to submit, region lock)?
 - [ ] KYC only at payout, not to start?
 - [ ] I can build a PoC in a **local fork / testnet** (no prod testing needed)?
+- [ ] Is the in-scope code **public**? If it's private/invite-only, does the program permit processing it with a third-party AI service? (Data retention is on for CVP, so review sessions are retained — fine for public repos, a problem for confidential code.)
 
 ## Scope (write it down verbatim)
 - **In scope:** ____
