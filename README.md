@@ -19,7 +19,9 @@ A repeatable, **human-gated** loop for finding vulnerabilities in one bug-bounty
 ## Two ways to run it
 
 - **Manual:** paste the prompts into Claude Code, one module at a time. Slower, full control.
-- **Automated:** run `bounty-review.mjs` as a Claude Code Workflow. It does steps 2–4 (recon → deep review → adversarial triage) and hands you a ranked candidate list. You still do 5–6 by hand.
+- **Automated:** run `bounty-review.mjs` as a Claude Code Workflow. It does steps 2–4 (recon → deep review → dedup → adversarial triage) and hands you a ranked candidate list. You still do 5–6 by hand.
+
+  Independent per-module reviewers routinely report the same defect from different entry points. The dedup stage clusters candidates by **root cause — what one patch would fix** — and triages each cluster once, so a duplicate can't come back keep in one write-up and kill in another. Merged findings keep an `occurrences` count and `alsoSurfacedAt` list; nothing is dropped. Where a merged `title` and its `triage.reason` disagree, trust `reason`.
 
   ```
   Workflow({ scriptPath: "bounty-review-kit/bounty-review.mjs",
