@@ -14,7 +14,9 @@ findings-log.md
 # personal session state; references specific targets reviewed
 HANDOFF.md
 
-# anything you keep per-target
+# anything you keep per-target.
+# NOTE: match every extension, not just .md — recon output lands in .txt/.json
+# (subdomain dumps, DNS results) and those name in-scope hosts just as loudly.
 notes/
 clones/
-*.local.md
+*.local.*
