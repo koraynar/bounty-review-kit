@@ -33,9 +33,27 @@ Used only where a published program **explicitly lists live hosts in scope and i
 - Findings are reported **privately, through the program's channel**, following its coordinated-disclosure rules.
 - Nothing is published, shared, or disclosed publicly before the program authorizes it.
 
-## Human-in-the-loop (non-negotiable)
-- The automated tooling produces **candidate observations only**. It never submits reports and never runs exploit code against live systems.
-- A human confirms scope, builds the PoC, verifies impact, and decides what (if anything) to submit.
+## Review and submission
+
+*Updated 2026-08-13. This section previously stated that a human performed every step including
+submission. That is no longer accurate, and an inaccurate policy is worse than an inconvenient one.*
+
+- **The review pipeline produces candidate observations only.** It never runs exploit code against live
+  systems, and no finding reaches a program straight from an automated run.
+- **Scope is confirmed against the program's own published brief before any work starts** — not from a
+  summary, and not from memory.
+- **Every finding is reproduced by an executable proof-of-concept** that runs locally against the
+  target's own test harness, with a control case demonstrating the assertions are meaningful.
+- **Findings pass an adversarial review stage** whose job is to refute them. Candidates that survive
+  only because nobody argued against them are not submitted.
+- **The researcher directs the operation and remains accountable for everything submitted under their
+  account.** They may delegate specific roles — including final review and the act of submission — to a
+  named agent, and where they do so they authorize it explicitly rather than by default.
+
+**Note on platform rules.** Some programs require the researcher personally to have validated any
+AI-assisted report before it is submitted. Where a program states such a requirement, it governs — the
+delegation above does not override it, and the researcher must satisfy that requirement themselves.
+Check each program's terms; they differ.
 
 ## Working with Anthropic's cyber safeguards
 
